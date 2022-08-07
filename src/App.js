@@ -9,9 +9,9 @@ import "./App.css";
 const App = () => {
   const [input, setInput] = useState("");
 
-  const [img, setImg] = useState("This is an Image");
-  const [title, setTitle] = useState("Title here");
-  const [desc, setDesc] = useState("Paragraph here...");
+  const [img, setImg] = useState("");
+  const [title, setTitle] = useState("");
+  const [desc, setDesc] = useState("");
 
   // API key here
   const key = "bbc8ff2f91mshff933d9b5af0c6ap10faeejsn4278437b2a98";
@@ -70,15 +70,7 @@ const App = () => {
         </div>
       </nav>
       <div className="container">
-        {!img ? (
-          <div>
-            <img
-              className="illustration"
-              src={require("./assets/Illustration.png")}
-              alt="illustration"
-            />
-          </div>
-        ) : (
+        {img ? (
           <div className="card">
             <div className="card-top">
               <img src={img} alt="link-image" />
@@ -87,6 +79,14 @@ const App = () => {
               <h3>{title}</h3>
               <p>{desc}</p>
             </div>
+          </div>
+        ) : (
+          <div>
+            <img
+              className="illustration"
+              src={require("./assets/Illustration.png")}
+              alt="illustration"
+            />
           </div>
         )}
 

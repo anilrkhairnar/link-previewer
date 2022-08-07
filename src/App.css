@@ -164,8 +164,12 @@ nav .menu span {
   nav .logo {
     width: 60px;
   }
+  nav .menu span {
+    margin: 7px 0;
+    width: 50px;
+  }
   .container {
-    margin: 100px 50px;
+    margin: 200px 50px;
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
@@ -175,5 +179,8 @@ nav .menu span {
   }
   .container .form input {
     margin: 35px 0 15px;
+  }
+  .container .illustration {
+    width: 400px;
   }
 }

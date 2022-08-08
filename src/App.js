@@ -12,6 +12,7 @@ const App = () => {
   const [img, setImg] = useState("");
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+  const [link, setLink] = useState("");
 
   // API key here
   const key = "bbc8ff2f91mshff933d9b5af0c6ap10faeejsn4278437b2a98";
@@ -36,19 +37,22 @@ const App = () => {
         setImg(result.cover);
         setTitle(result.title);
         setDesc(result.description);
-        console.log("working", img, title, desc);
+        console.log("working", result);
       })
       .catch(function (error) {
         console.error(error);
       });
+    setLink(input);
     setInput("");
+  };
+  const openLink = () => {
+    window.open(link, "_blank");
   };
   VanillaTilt.init(document.querySelector(".card"), {
     max: 25,
     speed: 400,
     glare: true,
     "max-glare": 0.5,
-    axis: "x",
   });
 
   //It also supports NodeList
@@ -71,7 +75,7 @@ const App = () => {
       </nav>
       <div className="container">
         {img ? (
-          <div className="card">
+          <div className="card" onClick={openLink}>
             <div className="card-top">
               <img src={img} alt="link-image" />
             </div>

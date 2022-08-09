@@ -14,9 +14,6 @@ const App = () => {
   const [desc, setDesc] = useState("");
   const [link, setLink] = useState("");
 
-  // API key here
-  const key = "bbc8ff2f91mshff933d9b5af0c6ap10faeejsn4278437b2a98";
-
   const options = {
     method: "GET",
     url: "https://og-link-preview.p.rapidapi.com/",
@@ -24,7 +21,7 @@ const App = () => {
       url: input,
     },
     headers: {
-      "X-RapidAPI-Key": key,
+      "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
       "X-RapidAPI-Host": "og-link-preview.p.rapidapi.com",
     },
   };

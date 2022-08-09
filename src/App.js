@@ -34,7 +34,6 @@ const App = () => {
         setImg(result.cover);
         setTitle(result.title);
         setDesc(result.description);
-        console.log("working", result);
       })
       .catch(function (error) {
         console.error(error);
